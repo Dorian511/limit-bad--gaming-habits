@@ -1,0 +1,11 @@
+*.spec
+*.bak
+*.xml
+.idea/
+.venv/
+build/
+build_temp/
+dist/
+main.build/
+main.dist/
+__pycache__/
