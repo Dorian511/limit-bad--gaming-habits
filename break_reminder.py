@@ -73,6 +73,7 @@ class BreakReminder:
 
         def respond(yes):
             popup.destroy()
+            self.last_prompt_time = time.time()
             if yes:
                 self.no_count = 0
                 self.show_break_screen(5, is_optional=True)
@@ -81,6 +82,8 @@ class BreakReminder:
                 if self.no_count >= 3:
                     self.timeout = True
                     self.show_break_screen(10, is_optional=False)
+                else:
+                    self.check_timer()
 
         button_frame = tk.Frame(popup, bg='black')
         button_frame.pack(pady=20)
